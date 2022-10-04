@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>java script learning</title>
+<body>
+<h2>uday kiran kondapalli computes  discounts”. </h2>
+
+<form>
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=20> <br>
+
+    <label for="form1_nick">Enter the discount percentage.  </label>
+    <input type ="text" id="form1_nick" name="form1_nick" value=10 autofocus> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+    function resolveCheck() {
+        console.log("Getting input")
+        cheese = document.getElementById("cb1_cheese").checked
+        olives = document.getElementById("cb1_olive").checked
+        onions = document.getElementById("cb1_onion").checked
+        confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
+        
+        out = document.getElementById("result")
+        if(confirmed){
+            out.innerHTML = "Values were confirmed"
+        } else {
+            out.innerHTML = "Values were not confirmed"
+        }
+    }
+    function discount() {
+    console.log("Getting input")
+    base = document.getElementById("form1_age").value
+    discount = document.getElementById("form1_nick").value
+    let result1="Discounted amounts for base "+base+" are ";
+    for(i=1; i<6 ; i++){
+        result1=result1+((i*base)-(i*base*discount)/100)+" ";
+    }
+    out = document.getElementById("result")
+    out.innerHTML = result1
+}
+ </script>
+</body>
+</html> 
